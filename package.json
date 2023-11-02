@@ -2,7 +2,7 @@
   "name": "my-first-gatsby-site",
   "version": "1.0.0",
   "private": true,
-  "description": "my-first-gatsby-site",
+  "description": "A Gatsby starter with no plugins and a single welcome page.",
   "author": "Ahmed Iqbal Bhatti",
   "keywords": [
     "gatsby"
@@ -14,6 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
+  "license": "0BSD",
   "dependencies": {
     "gatsby": "^5.12.4",
     "react": "^18.2.0",
