@@ -1,7 +1,10 @@
-import Layout from "../compnents/Layout";
-import SEO from "../compnents/SEO";
+import Layout from "../../compnents/Layout";
+import SEO from "../../compnents/SEO";
 import * as React from "react";
-import {graphql} from "gatsby";
+import {
+  graphql,
+  Link
+} from "gatsby";
 
 // import {graphql} from "gatsby";
 
@@ -13,7 +16,11 @@ function BlogPage({data}) {
     <Layout pageTitle={"My Blog Page"}>
       {posts?.map(post => (
         <article key={post.id}>
-          <h2>{post.frontmatter.title}</h2>
+          <h2>
+            <Link to={`/blog/${post.frontmatter.slug}`}>
+              {post.frontmatter.title}
+            </Link>
+          </h2>
           <p>Posted: {post.frontmatter.date}</p>
           <p>{post.excerpt}</p>
         </article>
@@ -33,6 +40,7 @@ export const query = graphql`
         frontmatter {
           date(formatString: "MMMM-D-YYYY")
           title
+          slug
         }
         id
         excerpt
