@@ -3,16 +3,21 @@ import SEO from "../compnents/SEO";
 import * as React from "react";
 import {graphql} from "gatsby";
 
-function BlogPage({data}) {
-  const posts = data?.allFile?.nodes;
+// import {graphql} from "gatsby";
 
+function BlogPage({data}) {
+  const posts = data?.allMdx?.nodes;
+
+  console.log(posts);
   return (
     <Layout pageTitle={"My Blog Page"}>
-      <ul>
-        {posts.map(post => (
-          <li key={post.name}>{post.name}</li>
-        ))}
-      </ul>
+      {posts?.map(post => (
+        <article key={post.id}>
+          <h2>{post.frontmatter.title}</h2>
+          <p>Posted: {post.frontmatter.date}</p>
+          <p>{post.excerpt}</p>
+        </article>
+      ))}
     </Layout>
   );
 }
@@ -22,12 +27,16 @@ export default BlogPage;
 export const Head = () => <SEO title={"My Blog Posts Page"}/>;
 
 export const query = graphql`
-  query MyQuery {
-    allFile(filter: {sourceInstanceName: {eq: "blog"}}) {
+  query {
+    allMdx(sort: {frontmatter: {date: DESC}}) {
       nodes {
-        name
+        frontmatter {
+          date(formatString: "MMMM-D-YYYY")
+          title
+        }
+        id
+        excerpt
       }
-      totalCount
     }
   }
 `;

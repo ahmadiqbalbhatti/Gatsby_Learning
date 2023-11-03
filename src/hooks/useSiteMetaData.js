@@ -5,7 +5,7 @@ import {
 
 function useSiteMetaData() {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query{
       site {
         siteMetadata {
           title
