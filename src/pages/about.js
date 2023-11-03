@@ -1,6 +1,7 @@
 import * as React from "react";
 import {Link} from "gatsby";
 import Layout from "../compnents/Layout";
+import SEO from "../compnents/SEO";
 
 function AboutPage() {
   return (
@@ -10,5 +11,5 @@ function AboutPage() {
   )
 }
 
-export const Head = ()=> <title>About Me</title>
+export const Head = ()=> <SEO title={"About Page"}/>
 export default AboutPage;

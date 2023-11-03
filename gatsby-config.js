@@ -3,10 +3,19 @@
  */
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`
+    title      : `My Gatsby Learning Website`,
+    description: `A Gatsby starter with no plugins and a single welcome page.`,
+    siteUrl    : `https://ahmadiqbalbhatti.com`
   },
   plugins     : [
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-image`, `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/blog`
+      },
+      __key  : `blog`
+    }
   ]
 };
