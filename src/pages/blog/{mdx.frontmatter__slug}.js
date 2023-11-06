@@ -2,14 +2,19 @@ import Layout from "../../compnents/Layout";
 import * as React from "react";
 import SEO from "../../compnents/SEO";
 import {graphql} from "gatsby";
-import {GatsbyImage} from "gatsby-plugin-image";
+import {
+  GatsbyImage,
+  getImage
+} from "gatsby-plugin-image";
 
 function BlogPost({data, children}) {
-  console.log(data.mdx.frontmatter);
+  console.log(data);
+  const image = getImage(data.mdx.frontmatter.hero_image.childImageSharp.gatsbyImageData);
+  console.log(image);
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       {/*<p>My blog post contents will go here (eventually).</p>*/}
-      <GatsbyImage alt={data.mdx.frontmatter.hero_image_alt} image={data.mdx.frontmatter.hero_image}/>
+      <GatsbyImage alt={data.mdx.frontmatter.hero_image_alt} image={image}/>
       {children}
     </Layout>
   );
@@ -36,4 +41,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

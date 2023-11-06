@@ -8,16 +8,17 @@ module.exports = {
     siteUrl    : `https://ahmadiqbalbhatti.com`
   },
   plugins     : [
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
+    "gatsby-plugin-mdx",
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-image`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "blog",
         path: `${__dirname}/blog/`
       }
-    },
-    "gatsby-plugin-mdx",
-    `gatsby-transformer-sharp`
+    }
   ]
 };
