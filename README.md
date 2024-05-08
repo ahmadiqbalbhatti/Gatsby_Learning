@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby Minimal Starter
+  Gatsby Minimal Starter project which I have used to learn about Gatsby JS.
 </h1>
 
 ## 🚀 Quick start
@@ -47,3 +47,6 @@
 Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
 
 [<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+
+
+![screencapture-gatsby-learnings-netlify-app-blog-2024-05-08-18_29_36](https://github.com/ahmadiqbalbhatti/Gatsby_Learning/assets/52331296/fe4a9b34-463c-4186-bdd4-7f0036682a7a)
